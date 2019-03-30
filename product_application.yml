@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8003
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///aigou
+    username: root
+    password: 123456
+  application:
+    name: PRODUCT-PROVIDER
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+---
+server:
+  port: 8004
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///aigou
+    username: root
+    password: 123456
+  application:
+    name: PRODUCT-PROVIDER-TEST
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
